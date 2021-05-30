@@ -2,6 +2,7 @@
 <html lang="en" tab="">
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 	<style>
 		html {
 			background: url(https://github.com/Jakdangmoi/Jakdangmoi.github.io/blob/main/bg.png?raw=true) no-repeat center center fixed;
@@ -59,21 +60,59 @@
 <div>
 	<div style="text-align: center" class="title">작당모의 첫번째 프로젝트</div>
 	<div style="text-align: center; padding-top: 3rem" class="contents"><span>Eternal Escape</span></div>
-	<ul>
-		<li id="about">about</li>
-		<li id="download">download</li>
-		<li id="thanks to">thanks to</li>
-		<li id="etc">etc</li>
-	</ul>
 	<div>
-<!-- 		<a href="https://drive.google.com/file/d/1V1NXgm6r6OpiJtk31I1AGjX5lnV94tx5/view?usp=sharing">다운로드</a> -->
-		
+		<ul>
+			<li id="about">about</li>
+			<li id="download">download</li>
+			<li id="thanks">thanks to</li>
+			<li id="etc">etc</li>
+		</ul>
 	</div>
-	<div id="dDownload">
-		<a href="https://drive.google.com/file/d/1V1NXgm6r6OpiJtk31I1AGjX5lnV94tx5/view?usp=sharing"><img src="https://github.com/Jakdangmoi/Jakdangmoi.github.io/blob/main/box.png?raw=true"></a>
+	
+	<div id="dAbout" style="padding: 5rem 15rem">
+	작당모의는 프로그래밍 2명, 작화 2명으로 이루어진 팀입니다.<br>
+	4명 모두 공포게임과 방탈출을 좋아하여 Eternal Escape를 만들게됐습니다.<br>
+	게임후기나 문의사항은 mock.up.wm@gmail.com으로 메일보내주시길 바랍니다.
+	</div>
+	<div id="dDownload" style="display: none;padding:5rem 15rem">
+		<a href="https://drive.google.com/file/d/1V1NXgm6r6OpiJtk31I1AGjX5lnV94tx5/view?usp=sharing"><img width="200px" src="box.png"></a>
+	</div>
+	<div id="dThanks" style="display: none;padding: 5rem 15rem">
+		우선 게임 테스트를 해준 시크릿쥬쥬와 문래동불주먹에게 감사를 표합니다.<br>
+		사운드출처: freesound.org, zapsplat
+	</div>
+	<div id="dEtc" style="display: none;padding: 5rem 15rem">
+		다음 프로젝트에 대한 정보가 올라오는 곳 입니다.
 	</div>
 </div>
-
+<script>
+	$(function(){
+		$('#about').click(function(){
+			$('#dAbout').show();
+			$('#dDownload').hide();
+			$('#dThanks').hide();
+			$('#dEtc').hide();
+		});
+		$('#download').click(function(){
+			$('#dAbout').hide();
+			$('#dDownload').show();
+			$('#dThanks').hide();
+			$('#dEtc').hide();
+		});
+		$('#thanks').click(function(){
+			$('#dAbout').hide();
+			$('#dDownload').hide();
+			$('#dThanks').show();
+			$('#dEtc').hide();
+		});
+		$('#etc').click(function(){
+			$('#dAbout').hide();
+			$('#dDownload').hide();
+			$('#dThanks').hide();
+			$('#dEtc').show();
+		});
+	});
+</script>
 <footer>
 	<div>Copyright ⓒ 2021. 작당모의.  All rights reserved </div>
 </footer>
